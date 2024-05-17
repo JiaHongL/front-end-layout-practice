@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [
+    RouterOutlet,
+    RouterLink
+  ],
   styles: `
     .menu-back-button {
       position: fixed;
@@ -24,7 +27,7 @@ import { RouterOutlet } from '@angular/router';
   `,
   template: `
     <router-outlet></router-outlet>
-    <a class="menu-back-button" href="/#/NO000">回目錄</a>
+    <a class="menu-back-button" routerLink="/NO000">回目錄</a>
   `,
 })
 export class AppComponent {}
